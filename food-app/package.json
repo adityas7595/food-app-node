@@ -1,0 +1,20 @@
+{
+  "name": "food-app",
+  "version": "1.0.0",
+  "description": "Food app node express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js"
+  },
+  "author": "Aditya Singh",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.5",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.4"
+  }
+}
