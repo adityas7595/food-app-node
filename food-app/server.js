@@ -19,6 +19,9 @@ app.use(morgan("dev"));
 //route
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/user", require("./routes/userRoutes"));
+app.use("/api/restaurant", require("./routes/restaurantRoutes"));
+app.use("/api/category", require("./routes/categoryRoutes"));
+app.use("/api/food", require("./routes/foodRoutes"));
 
 app.get("/", (req, res) => {
   return res.status(200).send("<h1>Welcome to food app");
