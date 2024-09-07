@@ -27,6 +27,32 @@ const getUserController = async (req, res) => {
   }
 };
 
+const getAllUserController = async (req, res) => {
+  try {
+    const user = await userModel.find({});
+    if (!user) {
+      return res.status(404).send({
+        message: "User not found",
+        success: false,
+      });
+    }
+
+    user.password = undefined;
+    res.status(200).send({
+      message: "Success",
+      success: true,
+      user,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(404).send({
+      message: "Error in get All user API",
+      success: false,
+      error,
+    });
+  }
+};
+
 const updateUserController = async (req, res) => {
   try {
     const user = await userModel.findById({ _id: req.body.id });
@@ -158,6 +184,7 @@ const deleteUserControllers = async (req, res) => {
 
 module.exports = {
   getUserController,
+  getAllUserController,
   updateUserController,
   resetPasswordControllers,
   updatePassswordControllers,
